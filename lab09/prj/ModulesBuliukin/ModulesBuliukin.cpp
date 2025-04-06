@@ -1,4 +1,3 @@
-#include <iostream>
 #include "ModulesBuliukin.h"
 
 using namespace std;
@@ -46,15 +45,37 @@ void getSocksSizeFromUA(short uaSize){
     string eu_table[] = {"37/38", "39/40", "41/42", "43/44", "45/46"};
     int us_uk_table[] = {8, 9, 10, 11, 12};
 
+    // bool able = false;
+
     for(int i = 0; i < 5; i++){
         if(uaSize == ua_table[i]){
             cout << "Розмір Україна: " << ua_table[i] << endl;
             cout << "Розмір ЄС: " << eu_table[i] << endl;
             cout << "Розмір США/Великобританія: " << us_uk_table[i] << endl;
+            // able = true;
             return;
         }
     }
 
-    cout << "Невідомий розмір. Спробуйте ще раз.\n";
+    // ну тут не те що я хотiв трохи...
+    /* if (able == true){
+         //
+     } else {cout << "Невідомий розмір. Спробуйте ще раз.\n"; getSocksSizeFromUA(uaSize);}
+     able = false;*/
 }
+
+unsigned int countBits(unsigned int N) {
+    bitset<24> b(N); // 24 біти достатньо (2^24 > 7483650)
+
+    bool bitD7 = b[7]; // доступ до біта як до елементу масиву
+
+    int count0 = 0, count1 = 0;
+    for(int i = 0; i < b.size(); i++){
+        if(b[i] == 0) count0++;
+        else count1++;
+    }
+
+    return (bitD7 ? count0 : count1);
+}
+
 
