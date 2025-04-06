@@ -13,7 +13,7 @@ void test_s_calculation() {
     }
 }
 
-// Функция для теста wind_strange
+// test wind_strange
 void test_wind_strange() {
     short windScore = 7;
     cout << "\nТест для wind_strange (швидкість вітру):\n";
@@ -24,7 +24,7 @@ void test_wind_strange() {
     wind_strange(windScore);
 }
 
-// Функция для теста getSocksSizeFromUA
+// test getSocksSizeFromUA
 void test_getSocksSizeFromUA() {
     short uaSize = 25;
     cout << "\nТест для getSocksSizeFromUA (розмір Україна):\n";
@@ -35,7 +35,7 @@ void test_getSocksSizeFromUA() {
     getSocksSizeFromUA(uaSize);
 }
 
-// Функция для теста countBits
+// test countBits
 void test_countBits() {
     unsigned int testCases[] = {0, 255, 128, 7483650, 1, 1024};
     unsigned int expectedResults[] = {24, 16, 23, 15, 23, 23};
